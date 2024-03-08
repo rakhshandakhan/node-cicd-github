@@ -37,9 +37,11 @@ jobs:
           zip -qq -r ../code.zip .
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          creds: '${{ secrets.AZURE_CREDENTIALS_PRIMARY }}'
+          client-id: "fc9b9336-e6ee-4be2-ba12-f6073139a6df"
+          tenant-id: "72f988bf-86f1-41af-91ab-2d7cd011db47"
+          subscription-id: "c02db5d4-fcdf-47d8-8a33-1980962e8496"
           enable-AzPSSession: true
 
       # - name: 'Run Azure Functions Action in EastUS'
