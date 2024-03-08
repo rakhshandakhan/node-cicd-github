@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - dnsvalidate
+name: Build and deploy Node.js project to Azure Function App - Rakshanda - node-cicd-test
 
 on:
   workflow_dispatch:
@@ -42,6 +42,7 @@ jobs:
           client-id: "fc9b9336-e6ee-4be2-ba12-f6073139a6df"
           tenant-id: "72f988bf-86f1-41af-91ab-2d7cd011db47"
           subscription-id: "c02db5d4-fcdf-47d8-8a33-1980962e8496"
+          auth-type: "SERVICE_PRINCIPAL"
           enable-AzPSSession: true
 
       # - name: 'Run Azure Functions Action in EastUS'
