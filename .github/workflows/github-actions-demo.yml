@@ -32,8 +32,8 @@ jobs:
           npm run test --if-present
           popd
 
-      # - name: Archive code
-      #   run: zip release.zip ./* -r
+      - name: archive code
+        run: zip release.zip ./* -r
 
       # - name: Archive code
       #   run: |
@@ -59,7 +59,7 @@ jobs:
         id: fa
         with:
           app-name: 'nodecicdtest'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: 'release.zip'
           publish-profile: ${{ secrets.NODECICDTEST_PUBLISH_PROFILE }}
 
       # - name: 'Run Azure Functions Action in WestUS2'
