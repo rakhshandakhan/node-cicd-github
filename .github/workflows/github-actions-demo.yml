@@ -67,7 +67,6 @@ jobs:
         uses: Azure/functions-action@v1.1.6
         with:
           app-name: 'node-cicd-test-funcapp'
-          slot-name: 'Production'
           package: 'release.zip'
           publish-profile: ${{ secrets.FUNCAPP_PUBLISH_PROFILE }}
 
