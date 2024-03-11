@@ -68,7 +68,7 @@ jobs:
         with:
           app-name: 'node-cicd-test-funcapp'
           slot-name: 'Production'
-          package: 'code.zip'
+          package: 'release.zip'
           publish-profile: ${{ secrets.FUNCAPP_PUBLISH_PROFILE }}
 
       # - name: 'Run Azure Functions Action in WestUS2'
