@@ -34,6 +34,7 @@ jobs:
 
       - name: Archive code
         run: |
+          cd temp
           zip -qq -r ../code.zip .
 
       # - name: Azure Login
