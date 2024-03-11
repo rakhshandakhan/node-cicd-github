@@ -40,15 +40,6 @@ jobs:
       #     cd temp
       #     zip -qq -r ../code.zip .
 
-      # - name: Azure Login
-      #   uses: azure/login@v2
-      #   with:
-      #     client-id: "fc9b9336-e6ee-4be2-ba12-f6073139a6df"
-      #     tenant-id: "72f988bf-86f1-41af-91ab-2d7cd011db47"
-      #     subscription-id: "c02db5d4-fcdf-47d8-8a33-1980962e8496"
-      #     auth-type: "SERVICE_PRINCIPAL"
-      #     enable-AzPSSession: true
-
       - name: Azure Login
         uses: azure/login@v1
         with:
@@ -67,14 +58,14 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'node-cicd-test-funcapp'
+          app-name: 'nodecicdtest'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.FUNCAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.NODECICDTEST_PUBLISH_PROFILE }}
 
       # - name: 'Run Azure Functions Action in WestUS2'
       #   uses: Azure/functions-action@v1
       #   with:
-      #     app-name: 'trigger-functions-azure'
+      #     app-name: 'node-cicd-test-funcapp'
       #     slot-name: 'Production'
       #     package: 'code.zip'
-      #     publish-profile: ${{ secrets.PUBLISHPROFILE_WESTUS2 }}
+      #     publish-profile: ${{ secrets.FUNCAPP_PUBLISH_PROFILE }}
