@@ -1,14 +1,14 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - Rakshanda - node-cicd-test
+name: Build and deploy Node.js project to Azure Function App - Rakshanda - testzipfilepackage 
 
 on:
   workflow_dispatch:
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '18.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  NODE_VERSION: '20.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
   build-and-deploy:
@@ -46,21 +46,13 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
 
-      # - name: 'Run Azure Functions Action in EastUS'
-      #   uses: Azure/functions-action@v1
-      #   with:
-      #     app-name: 'deplyr'
-      #     slot-name: 'Production'
-      #     package: 'code.zip'
-      #     publish-profile: ${{ secrets.PUBLISHPROFILE_UKSOUTH }}
-
       - name: 'Run Azure Functions Action in EastUS'
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'nodecicdtest'
+          app-name: 'testzipfilepackage'
           package: 'release.zip'
-          publish-profile: ${{ secrets.NODECICDTEST_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.TESTZIPFILEPACKAGE_PUBLISH_PROFILE }}
 
       # - name: 'Run Azure Functions Action in WestUS2'
       #   uses: Azure/functions-action@v1
