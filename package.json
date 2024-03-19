@@ -7,7 +7,12 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.0.0"
+    "@azure/functions": "^4.0.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-validator": "^3.1.2",
+    "mongoose": "^4.8.7",
+    "nodemon": "^1.14.12"
   },
   "devDependencies": {},
   "main": "src/functions/*.js"
